@@ -7,17 +7,20 @@ public class CustomerList {
     CustomerList(){
         for(int i=0; i < 10 ; i++)
         {
-            customers.add(new Customer("User " + i,Math.random()%2 == 0));
+            if(i < 5)
+                customers.add(new Customer("user" + i,true));
+            else
+                customers.add(new Customer("user" + i, false));
         }
     }
 
     void AddNewCustomer(){
-        System.out.println("Enter the name of the user");
         Scanner scanner = new Scanner(System.in);
         Customer customer = new Customer();
-        customer.name = scanner.next();
-        System.out.println("Enter 1 if the user is faculty");
+        System.out.println("Enter\n1 if the user is faculty\nenter 2 if the user is student");
         customer.faculty = (scanner.nextInt() == 1);
+        System.out.println("Enter the name of the user");
+        customer.name = scanner.next();
         customers.add(customer);
     }
 }

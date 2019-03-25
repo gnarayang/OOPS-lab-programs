@@ -6,7 +6,7 @@ public class BooksList {
 
     BooksList() {
         for (int i = 0; i < 50; i++) {
-            books.add(new Book("Book" + i, "publisher" + i, "author" + i));
+            books.add(new Book("book" + i, "publisher" + i, "author" + i, false));
         }
     }
 
@@ -26,6 +26,7 @@ public class BooksList {
         System.out.println("Enter the publisher's name");
         book.publisher = scanner.next();
         books.add(book);
+        System.out.println("Added successfully");
     }
 
     void deleteBooks(){
@@ -33,5 +34,6 @@ public class BooksList {
         Scanner scanner = new Scanner(System.in);
         int i = scanner.nextInt();
         books.remove(i);
+        System.out.println("Deleted successfully");
     }
 }
